@@ -1,0 +1,27 @@
+<h1>Listing magazines</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Editor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @magazines.each do |magazine| %>
+  <tr>
+    <td><%= magazine.title %></td>
+    <td><%= magazine.description %></td>
+    <td><%= magazine.editor %></td>
+    <td><%= link_to 'Show', magazine %></td>
+    <td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>
+    <td><%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Magazine', new_magazine_path %>
