@@ -16,6 +16,7 @@
     <td><%= link_to 'Show', subscriber %></td>
     <td><%= link_to 'Edit', edit_subscriber_path(subscriber) %></td>
     <td><%= link_to 'Destroy', subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Subscribe', subscription_list_url(subscriber) %></td>
   </tr>
 <% end %>
 </table>

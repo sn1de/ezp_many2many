@@ -1,0 +1,7 @@
+<h1>Subscribing <%= @subscriber.name %></h1>
+<h2>Magazine Choices</h2>
+<ul>
+<% @magazines.each do |magazine| %>
+	<li><%= magazine.title %></li>
+<% end %>
+</ul>

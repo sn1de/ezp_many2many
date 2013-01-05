@@ -80,4 +80,9 @@ class SubscribersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def subscription_list
+    @subscriber = Subscriber.find(params[:id])
+    @magazines = Magazine.find(:all)
+  end
 end
