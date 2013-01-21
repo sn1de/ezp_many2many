@@ -4,6 +4,9 @@ Publisher::Application.routes.draw do
   resources :magazines
 
   match 'subscriber/:id/subscription_list' => 'subscribers#subscription_list', :as => :subscription_list
+  match 'subscribed' => 'subscriptions#subscribed'
+  resources :subscriptions, only: [:create, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -2,6 +2,13 @@
 <h2>Magazine Choices</h2>
 <ul>
 <% @magazines.each do |magazine| %>
-	<li><%= magazine.title %></li>
+	<li>
+		<%= magazine.title %>
+		<%= form_for(@subscriber.subscriptions.build(magazine_id: magazine.id)) do |f|%>
+			<%= f.hidden_field :subscriber_id %>		
+			<%= f.hidden_field :magazine_id %>
+			<%= f.submit "Subscribe" %>
+		<% end %>
+	</li>
 <% end %>
 </ul>

@@ -15,6 +15,12 @@
   <%= @magazine.editor %>
 </p>
 
+<h2>Subscribers</h2>
+<ol>
+	<% @magazine.subscribers.each do |subscriber| %>
+		<li><%= subscriber.name %></li>
+	<% end %>
+</ol>
 
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
 <%= link_to 'Back', magazines_path %>
