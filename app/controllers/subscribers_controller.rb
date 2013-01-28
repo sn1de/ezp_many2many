@@ -86,9 +86,4 @@ class SubscribersController < ApplicationController
     @magazines = Magazine.find(:all)
   end
 
-  def subscribe
-    @subscriber = Subscriber.find(params[:subscriber_id])
-    @magazine = Magazine.find(params[:magazine_id])
-    redirect_to # temp confirmation page
-  end
 end
