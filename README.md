@@ -133,8 +133,8 @@ Our customer is subscribed, but there isn't anywhere to view all of their subscr
 		<% end %>
 	</ol>
 
-And ... your done!
-------------------
+And ... You're Done!
+--------------------
 
 At this point all of the building blocks are in place to start building more capabilities. You now have all of the Models, Controllers and Views in place for creating and viewing the entity domain. Any application functionality you add from this point on is just building on that foundation.
 
