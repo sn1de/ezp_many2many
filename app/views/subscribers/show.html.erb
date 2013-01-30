@@ -10,12 +10,12 @@
   <%= @subscriber.address %>
 </p>
 
+<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
+<%= link_to 'Back', subscribers_path %>
+
 <h2>Your Subscriptions</h2>
 <ol>
 	<% @subscriber.subscriptions.each do |sub| %>
 		<li><%= sub.magazine.title %></li>
 	<% end %>
 </ol>
-
-<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Back', subscribers_path %>

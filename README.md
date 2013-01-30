@@ -121,12 +121,30 @@ Our humble confirmation page with a link back to the subscribers detail page /ap
 
 	<h2>Congrats  <%= link_to @subscriber.name, @subscriber %> subscription was successful!</h2>
 
+Showing the Subscriptions
+-------------------------
+
+Our customer is subscribed, but there isn't anywhere to view all of their subscriptions. We'll add that to the subscriber show page /app/view/subscribers/show.htm.erb by appending the following code to the bottom of that file:
+
+	<h2>Your Subscriptions</h2>
+	<ol>
+		<% @subscriber.subscriptions.each do |sub| %>
+			<li><%= sub.magazine.title %></li>
+		<% end %>
+	</ol>
+
 And ... your done!
+------------------
+
+At this point all of the building blocks are in place to start building more capabilities. You now have all of the Models, Controllers and Views in place for creating and viewing the entity domain. Any application functionality you add from this point on is just building on that foundation.
+
 
 Discussion
 ----------
 
 We used generators and scaffolding when possible in this example. How did that compare with the tutorial approach? What are the pros and cons of using scaffolding? How can scaffolding help you keep up with the evolution of the rails framework?
+
+We haven't populated the duration field of our subscription model. Where would we do that? How could we enhance the application to allow subscription durations of 1 or 2 years to be created?
 
 We had to 'tell' our app about the entity relationships. Why isn't that automatic, like so many other things in rails?
 
