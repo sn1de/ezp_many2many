@@ -4,6 +4,7 @@
 <% @magazines.each do |magazine| %>
 	<li>
 		<%= magazine.title %>
+		<% #OPTIMIZE turn this into a button_to %>
 		<%= form_for(@subscriber.subscriptions.build(magazine_id: magazine.id)) do |f|%>
 			<%= f.hidden_field :subscriber_id %>		
 			<%= f.hidden_field :magazine_id %>

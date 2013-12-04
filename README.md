@@ -23,6 +23,8 @@ Create our Association Model
 
 Since we are not going to be doing CRUD operations directly against the subscription model (i.e. we wouldn't want to see a form with just a subscriber id field and a magazine id field and have to put the raw id numbers into that to create a subscription) there is no need for all of the functionality scaffolding creates. We will just generate the model with the necessary id fields for the subscriber and the magazine, plus a few additional details to help us manage the lifecycle of the subscription.
 
+
+	# can this command incorporate some of the relationships vi migration parameters, eg references, belongs_to
 	rails generate model Subscription subscriber_id:integer magazine_id:integer start:date duration:integer
 	rake db:migrate
 
