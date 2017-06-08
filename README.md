@@ -30,7 +30,7 @@ Since we are not going to be doing CRUD operations directly against the subscrip
 Implement the Many to Many Relationship
 ---------------------------------------
 
-~~We need to now 'tell' our original Magazine and Subscriber models about the model that is going to provide their many to many relationship.~~
+The Subscription model knows about the Subscriber and Magazine models, but we need to go back and 'tell' our original Magazine and Subscriber models about the model that is going to provide their many to many relationship.
 
 	class Magazine < ActiveRecord::Base
 	  attr_accessible :description, :editor, :title
@@ -69,10 +69,10 @@ Then create the controller method in SubscribersController to handle the request
 
 	def subscription_list
 	  @subscriber = Subscriber.find(params[:id])
-	  @magazines = Magazine.find(:all)
+	  @magazines = Magazine.all
 	end
 
-And now the view to render the page. Notice that we've embedded the form to create the subscription in the list and we'll create the routes and application logic for that a little later:
+And now the view to render the page. Notice that we've embedded the form to create the subscription in the list and we'll create the routes and application logic for that a little later. Create a new file ```app/views/subscription_list.html.erb```:
 
 	<h1>Subscribing <%= @subscriber.name %></h1>
 	<h2>Magazine Choices</h2>
