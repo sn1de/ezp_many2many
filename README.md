@@ -33,19 +33,16 @@ Implement the Many to Many Relationship
 The Subscription model knows about the Subscriber and Magazine models, but we need to go back and 'tell' our original Magazine and Subscriber models about the model that is going to provide their many to many relationship.
 
 	class Magazine < ActiveRecord::Base
-	  attr_accessible :description, :editor, :title
 	  has_many :subscriptions
 	  has_many :subscribers, through: :subscriptions
 	end
 
 	class Subscriber < ActiveRecord::Base
-	  attr_accessible :address, :name
 	  has_many :subscriptions
 	  has_many :magazines, through: :subscriptions
 	end
 
 	class Subscription < ActiveRecord::Base
-	  attr_accessible :duration, :magazine_id, :start, :subscriber_id
 	  belongs_to :magazine
 	  belongs_to :subscriber
 	end
