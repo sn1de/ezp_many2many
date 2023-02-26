@@ -69,7 +69,7 @@ Then create the controller method in SubscribersController to handle the request
 	  @magazines = Magazine.find(:all)
 	end
 
-And now the view to render the page. Notice that we've embedded the form to create the subscription in the list and we'll create the routes and application logic for that a little later:
+And now the view to render the page. Create a new file app/views/subscribers/subscription_list.html.erb. Notice that we've embedded the form to create the subscription in the list and we'll create the routes and application logic for that a little later:
 
 	<h1>Subscribing <%= @subscriber.name %></h1>
 	<h2>Magazine Choices</h2>
