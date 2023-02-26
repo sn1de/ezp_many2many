@@ -59,7 +59,7 @@ This page is going to be kind of a pick list for magazine subscription. Since ou
 
 	 match 'subscriber/:id/subscription_list' => 'subscribers#subscription_list', :as => :subscription_list
 
-Remember, you can always use 'rake routes' to see list all of the routing in your application.
+Remember, you can always use 'bin/rails routes' to see list all of the routing in your application.
 
 
 Then create the controller method in SubscribersController to handle the request by fetching the appropriate subscriber entity and also a list of magazines for potential subscription:
